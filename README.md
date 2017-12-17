@@ -21,9 +21,10 @@ The module exports, for any `Array` and the `%TypedArray%`-constructors, a
 constructor named `FixedLength*`. So, for example, `FixedLengthArray` for
 `Array` and `FixedLengthUint8Array` for `Uint8Array`.
 
-One can instead also import the constructors from equivalently-named files;
-however, those don’t include `symbolExpectedLength`, which can instead be
-imported from `fixed-length-arrays/factory`.
+One can instead also import the constructors from equivalently-named files,
+which can be found in `fixed-length-arrays/lib/`; however, those don’t include
+`symbolExpectedLength`, which can instead be imported from
+`fixed-length-arrays/lib/factory`.
 
 ```js
 const {
@@ -31,8 +32,8 @@ const {
   FixedLengthArray
 } = require("fixed-length-arrays");
 // Or, equivalently:
-const { symbolExpectedLength } = require("fixed-length-arrays/factory");
-const FixedLengthArray = require("fixed-length-arrays/FixedLengthArray");
+const { symbolExpectedLength } = require("fixed-length-arrays/lib/factory");
+const FixedLengthArray = require("fixed-length-arrays/lib/FixedLengthArray");
 
 class Example extends FixedLengthArray {}
 Example[symbolExpectedLength] = 5; // Every new instance of Example with a different length will throw
