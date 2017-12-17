@@ -15,6 +15,9 @@ property with `symbolExpectedLength` as key **upon instantiation**. Note that
 this does **not** affect the `length`-property—one can still set it to any value
 one could set it to for the standard constructors.
 
+The `symbolExpectedLength`-property can also be set via `setExpectedLength`, a
+function also exported by the module.
+
 ### Using Predefined Fixed-Length Arrays
 
 The module exports, for any `Array` and the `%TypedArray%`-constructors, a
@@ -23,20 +26,28 @@ constructor named `FixedLength*`. So, for example, `FixedLengthArray` for
 
 One can instead also import the constructors from equivalently-named files,
 which can be found in `fixed-length-arrays/lib/`; however, those don’t include
-`symbolExpectedLength`, which can instead be imported from
+`symbolExpectedLength` and `setExpectedLength`, which can instead be imported from
 `fixed-length-arrays/lib/factory`.
 
 ```js
 const {
   symbolExpectedLength,
+  setExpectedLength,
   FixedLengthArray
 } = require("fixed-length-arrays");
 // Or, equivalently:
-const { symbolExpectedLength } = require("fixed-length-arrays/lib/factory");
+const {
+  symbolExpectedLength,
+  setExpectedLength
+} = require("fixed-length-arrays/lib/factory");
 const FixedLengthArray = require("fixed-length-arrays/lib/FixedLengthArray");
 
 class Example extends FixedLengthArray {}
-Example[symbolExpectedLength] = 5; // Every new instance of Example with a different length will throw
+
+// Every new instance of Example with a different length will throw
+Example[symbolExpectedLength] = 5;
+// Or, equivalently:
+setExpectedLength(Example, 5);
 
 new Example(10); // Throws
 new Example(0); // Throws
