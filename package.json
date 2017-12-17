@@ -9,7 +9,7 @@
     "url": "https://github.com/Myhlamaeus"
   },
   "files": ["lib"],
-  "main": "lib/index.js",
+  "main": "lib/index",
   "keywords": ["array", "fixed", "length"],
   "devDependencies": {
     "coveralls": "^2.13.1",
