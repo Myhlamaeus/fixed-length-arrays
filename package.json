@@ -1,6 +1,6 @@
 {
   "name": "fixed-length-arrays",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Arrays of fixed length",
   "homepage": "https://github.com/Myhlamaeus/fixed-length-arrays",
   "author": {
@@ -8,9 +8,15 @@
     "email": "dreyer.maltem+dev@gmail.com",
     "url": "https://github.com/Myhlamaeus"
   },
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "main": "lib/index",
-  "keywords": ["array", "fixed", "length"],
+  "keywords": [
+    "array",
+    "fixed",
+    "length"
+  ],
   "devDependencies": {
     "coveralls": "^2.13.1",
     "nsp": "^2.6.3",
@@ -35,11 +41,20 @@
     "test": "jest"
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "git add"],
-    "*.json": ["prettier --write", "git add"]
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "eslintConfig": {
-    "extends": ["xo", "prettier"],
+    "extends": [
+      "xo",
+      "prettier"
+    ],
     "env": {
       "jest": true,
       "node": true
@@ -53,7 +68,9 @@
         }
       ]
     },
-    "plugins": ["prettier"]
+    "plugins": [
+      "prettier"
+    ]
   },
   "repository": "Myhlamaeus/fixed-length-arrays",
   "jest": {
